@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="back">
+  <h2>Welcome to Ionic!</h2>
+  <p class="text-white">
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+
+  <ion-searchbar (ionInput)="getItems($event)"  [(ngModel)]="selectedPlace"></ion-searchbar>
+
+<ion-list>
+  <button ion-item *ngFor="let item of finalItems;let i=index" (click)="addPlace(i)">
+    {{ item }}
+  </button>
+</ion-list>
+
+  
+ 
+  <!-- <ion-input disabled="true" type="text" name="DOB" (click)="openDatepicker()" [(ngModel)]="today" ng-readonly></ion-input> -->
+  
+
+<ion-item class="mb-4">
+    <ion-label stacked>From</ion-label>
+    <ion-input type="date" data-date-inline-picker="true" [(ngModel)]="fromDate" ></ion-input>
+  </ion-item>
+  <ion-item class="mb-4">
+      <ion-label stacked>To</ion-label>
+      <ion-input type="date" data-date-inline-picker="true" [(ngModel)]="toDate"></ion-input>
+    </ion-item>
+    <ion-item class="mb-4">
+        <ion-label stacked>Number of Guests</ion-label>
+        <ion-input type="number" [(ngModel)]="person"></ion-input>
+      </ion-item>
+<button ion-button color="secondary" (click)="goToHotels()" >Submit</button>
+
+
+</ion-content>
+

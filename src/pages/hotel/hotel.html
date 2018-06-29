@@ -1,0 +1,98 @@
+<!--
+  Generated template for the HotelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-row>
+    {{place}}
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{fromDate}} to {{toDate}}
+      </ion-col>
+      <ion-col>
+      <ion-icon name="person"></ion-icon> {{person}}
+    </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-card (click)="details()"> 
+    <img src="../../assets/imgs/hostel2.jpg"/>
+    <div class="card-title">São Paulo</div>
+    
+    <ion-row>
+      <ion-col >
+          <ion-badge color="secondary" class="acb">9.2</ion-badge>
+      </ion-col >
+      <ion-col class="ab">
+      
+         SUPERB .
+       
+          168
+          <ion-icon ios="ios-text" md="md-text"></ion-icon>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="" icon-start>
+          <ion-icon name='pricetag'></ion-icon>
+          199
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+ 
+  <ion-card>
+      <img src="../../assets/imgs/hostel.jpg"/>
+      <div class="card-title">Krishna Hostels</div>
+      
+      <ion-row>
+        <ion-col >
+            <ion-badge color="secondary" class="acb">9.2</ion-badge>
+        </ion-col >
+        <ion-col class="ab">
+        
+           SUPERB .
+         
+            168
+            <ion-icon ios="ios-text" md="md-text"></ion-icon>
+        </ion-col>
+        <ion-col text-right>
+          <button ion-button clear small color="" icon-start>
+            <ion-icon name='pricetag'></ion-icon>
+            249
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card>
+        <img src="../../assets/imgs/hostel1.jpg"/>
+        <div class="card-title">OYO Rooms</div>
+        
+        <ion-row>
+          <ion-col >
+              <ion-badge color="secondary" class="acb">9.2</ion-badge>
+          </ion-col >
+          <ion-col class="ab">
+          
+             SUPERB .
+           
+              168
+              <ion-icon ios="ios-text" md="md-text"></ion-icon>
+          </ion-col>
+          <ion-col text-right>
+            <button ion-button clear small color="" icon-start>
+              <ion-icon name='pricetag'></ion-icon>
+              299
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+  
+</ion-content>
