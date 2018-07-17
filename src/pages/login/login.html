@@ -1,0 +1,48 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header">
+
+<ion-navbar  class="header">
+    <ion-title>Sign In</ion-title>
+ </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding [ngClass]='{"back":userProfile}'>
+<span *ngIf="!userProfile">
+    <ion-list>
+
+        <ion-item>
+          <ion-label floating>Username/Email</ion-label>
+          <ion-input type="text">
+          </ion-input>
+          
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        
+      </ion-list>
+      <button class="btn btn-danger btn-block btn-lg" >Sign In</button>
+      <p class="mt-4 text-center">Forgot password?</p>
+
+      <button class="btn btn-primary btn-block btn-lg" (click)="googleLogin()">Login with Google</button>
+    </span>
+    <div class="container-fluid " *ngIf="userProfile">
+   <div class="row justify-content-center">
+     <div classs="col-1">
+        <button class="btn btn-primary btn-lg " (click)="ab()" >Get Started</button>
+     </div>
+      
+    </div>
+  </div>
+     
+</ion-content>
+

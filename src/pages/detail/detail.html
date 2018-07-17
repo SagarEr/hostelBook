@@ -14,17 +14,17 @@
 <ion-content>
 <ion-card class="abc"> 
     <div >
-    <img src="../../assets/imgs/hostel2.jpg" />
+    <img src="{{item.image}}" />
     </div>
   </ion-card>
 
 
 <div class="p-3" >
  
-  <h3 >São Paulo</h3>
+  <h3 >{{item.name}}</h3>
   <ion-row>
     <ion-col col-10>
-        <p class="ml-3">D-100, B2 Bihari Marg, BaniPark, Jaipur, India</p>
+        <p class="ml-3">{{item.address}}</p>
 </ion-col>
 <ion-col col-2>
     <ion-icon  ios="ios-navigate" md="md-navigate" color="danger"></ion-icon>
@@ -32,12 +32,12 @@
 </ion-col>
 </ion-row>
   <hr>
-  <ion-badge color="danger" class="acb ">9.2</ion-badge>
-  <label class="labelColor">SUPERB</label>
+  <ion-badge color="danger" class="acb ">{{item.rating}}</ion-badge>
+  <label class="labelColor">{{item.review}}</label>
 
   
   <ion-icon class="rightFloat" ios="ios-text" md="md-text" color="danger"></ion-icon>
-  <label class="labelColor rightFloat mr-3 ">169 reviews</label>
+  <label class="labelColor rightFloat mr-3 ">{{item.comment}} reviews</label>
 
 <hr>
 <ion-row>
@@ -51,31 +51,49 @@
 
 <ion-row class="mb-3">
     <ion-col col-1></ion-col>
-    <ion-col col-5>
-        <ion-icon class="colorGrey" name="laptop">Free Internet Access</ion-icon>
+    <ion-col col-1>
+        <ion-icon class="colorGrey  " name="laptop"></ion-icon>
     </ion-col>
-    <ion-col col-5>
-        <ion-icon class="colorGrey" name="wifi">Free Wifi</ion-icon>
+    <ion-col col-4>
+        <span class="ml-1">Free Internet Access</span>
+    </ion-col>
+     <ion-col col-1>
+        <ion-icon class="colorGrey  " name="wifi"></ion-icon>
+    </ion-col>
+    <ion-col col-4>
+        <span class="ml-1">Free Wifi</span>
     </ion-col>
     <ion-col col-1></ion-col>
 </ion-row>
 <ion-row class="mb-3">
     <ion-col col-1></ion-col>
-    <ion-col col-5>
-        <ion-icon class="colorGrey" name="lock">Security Lockers</ion-icon>
+    <ion-col col-1>
+        <ion-icon class="colorGrey  " name="lock"></ion-icon>
     </ion-col>
-    <ion-col col-5>
-        <ion-icon class="colorGrey" name="briefcase">Luggage Storage</ion-icon>
+    <ion-col col-4>
+        <span class="ml-1">Security Lockers</span>
+    </ion-col>
+    <ion-col col-1>
+        <ion-icon class="colorGrey  " name="briefcase"></ion-icon>
+    </ion-col>
+    <ion-col col-4>
+        <span class="ml-1">Luggage Storage</span>
     </ion-col>
     <ion-col col-1></ion-col>
 </ion-row>
 <ion-row>
     <ion-col col-1></ion-col>
-    <ion-col col-5>
-        <ion-icon class="colorGrey" name="pizza">Fast Food Available</ion-icon>
+    <ion-col col-1>
+        <ion-icon class="colorGrey  " name="pizza"></ion-icon>
     </ion-col>
-    <ion-col col-5>
-        <ion-icon class="colorGrey" name="car">Free parking</ion-icon>
+    <ion-col col-4>
+        <span class="ml-1">Fast Food Available</span>
+    </ion-col>
+    <ion-col col-1>
+        <ion-icon class="colorGrey  " name="car"></ion-icon>
+    </ion-col>
+    <ion-col col-4>
+        <span class="ml-1">Free Parking</span>
     </ion-col>
     <ion-col col-1></ion-col>
 </ion-row>
@@ -90,6 +108,106 @@
 </ion-row>
   
 <hr>
+<h5  class="colorGrey ml-3">Properties</h5>
+<div *ngIf="propertyMode">
+ <p class="marg">Hoztel Jiapur is designed to offer you need and everything which is requirerd to stay
+     in the room ...
+ </p>
+ <p (click)="toggleProperty()" class="Read">Read More</p>
 </div>
 
+<div *ngIf="!propertyMode">
+    <p class="marg">Hoztel Jiapur is designed to offer you need and everything which is requirerd to stay
+        in the room because here are so good.
+        <br>
+        Hoztel Jiapur is designed to offer you need and everything which is requirerd to stay
+        in the room because here are so good.
+        <br>
+        Hoztel Jiapur is designed to offer you need and everything which is requirerd to stay
+        in the room because here are so good.
+        <br>
+        Hoztel Jiapur is designed to offer you need and everything which is requirerd to stay
+        in the room because here are so good.
+
+    </p>
+    <p (click)="toggleProperty()" class="Read mb-3">Read Less</p>
+   </div>
+
+   
+
+
+   <ion-icon class="mt-4  ml-3" name="flag">
+       <span class="colorGrey ml-3">Policies</span>
+   </ion-icon>
+   <div *ngIf="policyMode">
+    <p class="marg">
+        Age Restriction
+        <br>
+        Credit Cards Not accepted..
+    </p>
+    <p (click)="togglePolicy()" class="Read">Read More</p>
+   </div>
+   <div *ngIf="!policyMode">
+        <p class="marg">Age Restriction
+            <br>
+            Credits Cards Not Accpeted here
+            <br>
+            No Alcohol
+            <br>
+            No Smoking
+        </p>
+        <p (click)="togglePolicy()" class="Read mb-3">Read Less</p>
+       </div>
+
+       <ion-icon class="mt-4  ml-3" name="close-circle">
+            <span class="colorGrey ml-3">Cancellation policy</span>
+        </ion-icon>
+        <div *ngIf="cancelMode">
+         <p class="marg">
+             Age Restriction
+             <br>
+             Credit Cards Not accepted..
+         </p>
+         <p (click)="toggleCancel()" class="Read">Read More</p>
+        </div>
+        <div *ngIf="!cancelMode">
+             <p class="marg">Age Restriction
+                 <br>
+                 Credits Cards Not Accpeted here
+                 <br>
+                 No Alcohol
+                 <br>
+                 No Smoking
+             </p>
+             <p (click)="toggleCancel()" class="Read mb-3">Read Less</p>
+            </div>
+
+            <ion-icon class="mt-4  ml-3" name="information-circle">
+                    <span class="colorGrey ml-3">Things to Note</span>
+                </ion-icon>
+                <div *ngIf="thingMode">
+                 <p class="marg">
+                     Age Restriction
+                     <br>
+                     Credit Cards Not accepted..
+                 </p>
+                 <p (click)="toggleThing()" class="Read">Read More</p>
+                </div>
+                <div *ngIf="!thingMode">
+                     <p class="marg">Age Restriction
+                         <br>
+                         Credits Cards Not Accpeted here
+                         <br>
+                         No Alcohol
+                         <br>
+                         No Smoking
+                     </p>
+                     <p (click)="toggleThing()" class="Read mb-3">Read Less</p>
+                    </div>
+</div>
 </ion-content>
+
+<ion-footer>
+    <button class="btn btn-danger btn-block btn-lg" (click)="numberRoom()">Book Room</button>
+
+</ion-footer>

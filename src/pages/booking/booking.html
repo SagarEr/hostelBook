@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Booking Summary</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Booking Details
+    </ion-card-header>
+    <ion-card-content>
+      <h1> 
+      {{item.name}}</h1><br>
+      <h3> 
+      {{item.address}}</h3><br>
+      <h3>
+      Number of Rooms are {{num}}
+      </h3>
+       </ion-card-content>
+       <p class="ml-2">Total Amount payable
+       <span class="mr-2" style="float: right">{{num*item.price}}</span></p>
+  </ion-card>
+    
+</ion-content>
+
+<ion-footer>
+    <button class="btn btn-danger btn-block btn-lg" (click)="bookRoom()">Confirm Booking</button>
+
+</ion-footer>

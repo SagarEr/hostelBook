@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Choose Number of Beds</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items;let i=index" (click)="itemSelected(i)">
+      {{ item }}
+    </button>
+  </ion-list>
+</ion-content>

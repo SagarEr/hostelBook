@@ -1,9 +1,11 @@
-import { WishlistPage } from './../wishlist/wishlist';
+import { BooksPage } from './../books/books';
+import { WishlistHotelsPage } from './../wishlist-hotels/wishlist-hotels';
+import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
-
-import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
+
+
 
 
 
@@ -13,9 +15,10 @@ import { HomePage } from '../home/home';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
+  tab2Root = LoginPage;
   tab3Root = ContactPage;
-  tab4Root = WishlistPage;
+  tab4Root = WishlistHotelsPage;
+  tab5Root = BooksPage;
 
   constructor() {
 
