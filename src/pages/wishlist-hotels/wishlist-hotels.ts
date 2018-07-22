@@ -22,21 +22,21 @@ import { Observable } from 'rxjs';
 export class WishlistHotelsPage {
 arr=[];
 items: Observable<any[]>;
-deposits: Observable<any>;
+// deposits: Observable<any>;
 ho=[];
 arrID=[];
   private itemsCollection: AngularFirestoreCollection<any>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public db:AngularFirestore,public cService:DataProvider) {
     // this.arr=this.cService.hostel;
-    this.itemsCollection = db.collection<any>('hostels',ref=>ref.where('status', '==', true));
-    this.deposits = this.itemsCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as any;
-        const id = a.payload.doc.id; 
-            return {  id, ...data };
+    // this.itemsCollection = db.collection<any>('hostels',ref=>ref.where('status', '==', true));
+    // this.deposits = this.itemsCollection.snapshotChanges().pipe(
+    //   map(actions => actions.map(a => {
+    //     const data = a.payload.doc.data() as any;
+    //     const id = a.payload.doc.id; 
+    //         return {  id, ...data };
   
-      }))
-    );
+    //   }))
+    // );
     console.log("hh");
 
     db.collection('wishlist',ref=>ref.where('userid','==',this.cService.userss.email)).valueChanges().subscribe
